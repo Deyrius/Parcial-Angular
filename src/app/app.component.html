@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<ng-container *ngIf="!this.validUser?.sesion">
+    <app-login></app-login>
+</ng-container>
+
+<ng-container *ngIf="this.validUser?.sesion">
+    <app-navbar></app-navbar>
+
+    <ng-container *ngIf="this.validMenu?.formulario && !this.validMedio.medios">
+        <app-formulario></app-formulario>
+    </ng-container>
+    <ng-container *ngIf="this.validMedio?.medios && !this.validMenu.formulario">
+        <app-tabla></app-tabla>
+    </ng-container>
+
+</ng-container>
+
+
+<!-- <router-outlet></router-outlet> -->

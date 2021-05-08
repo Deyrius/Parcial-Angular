@@ -1,0 +1,57 @@
+<form [formGroup]="usuarioForm">
+    <div>
+        <h3 class="has-info" style="color: green; text-align: center">{{this.aviso}}</h3>
+        <h3 style="text-align: center; color:red">{{this.avisoError}}</h3>
+    </div>
+
+    <div class="form-group">
+        <label>Apellido</label>
+        <input type="text" class="form-control" formControlName="apellidoForm" placeholder="{{this.usuario.apellido}}" autofocus>
+        <div *ngIf="controles.apellidoForm.errors?.pattern">
+            <p style="color: red;">Apellido invalido</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" class="form-control" formControlName="nombreForm" placeholder="{{this.usuario.nombre}}" autofocus>
+        <div *ngIf="controles.nombreForm.errors?.pattern">
+            <p style="color: red;">Nombre invalido</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Correo electrónico</label>
+        <input type="email" class="form-control" formControlName="mailForm" placeholder="{{this.usuario.mail}}" autofocus>
+        <div *ngIf="controles.mailForm.errors?.pattern">
+            <p style="color: red;">Correo invalido</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Operador</label>
+        <input type="text" class="form-control" formControlName="operadorForm" placeholder="{{this.usuario.operador}}" autofocus>
+        <div *ngIf="controles.operadorForm.errors?.pattern">
+            <p style="color: red;">Operador invalido</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Papel</label>
+        <input type="text" class="form-control" formControlName="papelForm" placeholder="{{this.usuario.papel}}" autofocus>
+        <div *ngIf="controles.papelForm.errors?.pattern">
+            <p style="color: red;">Papel invalido</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Contraseña</label>
+        <input type="password" class="form-control" formControlName="passForm" autofocus>
+        <div *ngIf="controles.passForm.errors?.pattern">
+            <p style="color: red;">Contraseña invalida</p>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)=" btnCambios()">Guardar cambios</button>
+
+</form>
